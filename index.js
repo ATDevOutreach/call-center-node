@@ -18,7 +18,6 @@ app.post('/', function (req, res) {
 
 	let digits = req.body.dtmfDigits;
 	console.log("DTMF: " + digits);
-	console.log("DTMF: " + digits);
 	console.log("details: " + JSON.stringify(details));
 
 	if (details.language_selected != true) {
