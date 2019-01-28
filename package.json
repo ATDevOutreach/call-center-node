@@ -1,0 +1,17 @@
+{
+  "name": "call-center-demo",
+  "version": "0.1.0",
+  "description": "A call center demo",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "start": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Stephen Afam-Osemene <safamo@africastalking.com>",
+  "license": "ISC"
+}
