@@ -31,7 +31,7 @@ app.post('/', function (req, res) {
 				break;
 			
 			default:
-				return base(req, res);
+				base(req, res);
 				break;
 		}
 
@@ -58,8 +58,7 @@ app.post('/', function (req, res) {
 app.listen(port, () => console.log(`Call Center listening on port ${port}!`));
 
 
-function base(req, res)
-{
+function base(req, res) {
 	let text = "Welcome. Select your language. Press 1 for english, 2 for pidgin.";
 
 	let response = `<?xml version="1.0" encoding="UTF-8"?>
@@ -72,8 +71,7 @@ function base(req, res)
 	res.send(response);
 }
 
-function english(req, res)
-{
+function english(req, res) {
 	details.language_selected = true;
 	details.language = "english";
 	updateDetails(req.body.sessionId, details);
@@ -90,8 +88,7 @@ function english(req, res)
 	res.send(response);
 }
 
-function pidgin(req, res)
-{
+function pidgin(req, res) {
 	details.language_selected = true;
 	details.language = "pidgin";
 	updateDetails(req.body.sessionId, details);
@@ -108,8 +105,7 @@ function pidgin(req, res)
 	res.send(response);
 }
 
-function support(req, res)
-{
+function support(req, res) {
 	let language = details.language;
 
 	let text = "Your call is being forwarded to a support agent. Note that this call may be recorded.";
@@ -129,8 +125,7 @@ function support(req, res)
 	res.send(response);
 }
 
-function sales(req, res)
-{
+function sales(req, res) {
 	let language = details.language;
 
 	let text = "Your call is being forwarded to a sales agent. Note that this call may be recorded.";
@@ -150,11 +145,10 @@ function sales(req, res)
 	res.send(response);
 }
 
-function unknownOption(req, res)
-{
+function unknownOption(req, res) {
 	let text = "You have selected an unknown option";
 	if (details.language == "pidgin") {
-		$text = "We no understand the option wey you select.";
+		text = "We no understand the option wey you select.";
 	}
 
 	let response = `<?xml version="1.0" encoding="UTF-8"?>
